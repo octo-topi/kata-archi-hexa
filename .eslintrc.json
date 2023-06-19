@@ -4,7 +4,7 @@
         "es2021": true,
         "node": true
     },
-    "extends": ["plugin:mocha/recommended", "eslint:recommended"],
+    "extends": ["plugin:mocha/recommended", "eslint:recommended",  "plugin:import/recommended"],
     "parserOptions": {
         "ecmaVersion": 13
     },
