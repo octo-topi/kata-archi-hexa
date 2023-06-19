@@ -3,7 +3,14 @@ const expect = chai.expect;
 import sinonChai from 'sinon-chai';
 chai.use(sinonChai);
 
+describe('When a test is written',function() {
+  it('should fail', function() {
+    // given
 
-it('fails', function() {
-  expect(1).to.equal(0);
-});
+    // when
+
+    // then
+    expect(1).to.equal(0);
+  });
+})
+
