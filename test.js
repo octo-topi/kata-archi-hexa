@@ -1,6 +1,6 @@
-const  chai = require('chai');
-const { expect }= require('chai');
-const sinonChai = require('sinon-chai');
+import * as chai from 'chai';
+import { expect } from 'chai';
+import sinonChai from 'sinon-chai';
 chai.use(sinonChai);
 
 it('fails', function() {
