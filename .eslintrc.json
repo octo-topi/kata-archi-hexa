@@ -6,7 +6,7 @@
     },
     "extends": ["plugin:mocha/recommended", "eslint:recommended",  "plugin:import/recommended"],
     "parserOptions": {
-        "ecmaVersion": 13
+        "ecmaVersion": 11
     },
     "plugins": [ "mocha" ],
     "rules": {
