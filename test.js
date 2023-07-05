@@ -1,31 +1,23 @@
 import chai from 'chai';
 const expect = chai.expect;
-import sinon from 'sinon';
-import sinonChai from 'sinon-chai';
-chai.use(sinonChai);
+import { taxRate }from './application/tax-calculator.js'
 
-describe('#stub',function() {
-  it("should return {people: 'jane'}", function() {
-    // given
-    const stub = sinon.stub();
-    stub.returns({people: 'jane'})
+// taxRate(amount) return the tax rate to apply, eg. taxRate(100) => 0,10 (10 percent)
+// taxOn(amount) return the tax value, eg.taxRate(100) =>  10 (euros)
 
-    // when
-    const data = stub()
+describe('#taxRate',function() {
+  describe('given the amount is zero',function() {
+    it("should return zero", function() {
+      // given
+      const amount = 0;
 
-    // then
-    expect(data).to.deep.equal({people: 'jane'});
-  });
-  it("should be called once with {parameter: 'foo'}", function() {
-    // given
-    const stub = sinon.stub();
-    stub.returns({people: 'jane'})
+      // when
+      const rate = taxRate(amount);
 
-    // when
-    stub({parameter: 'foo'})
+      // then
+      expect(rate).to.equal(0);
+    });
+  })
 
-    // then
-    expect(stub).to.have.been.calledWith({parameter: 'foo'});
-  });
 })
 
