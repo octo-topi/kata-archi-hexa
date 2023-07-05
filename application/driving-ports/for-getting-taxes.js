@@ -1,6 +1,6 @@
 const forGettingTaxes = {
   taxRate: (amount, taxRepository) => {
-    return 0
+    return taxRepository.get(amount)
   }
 }
 
