@@ -1,6 +1,7 @@
 const forGettingTaxes = {
-  taxRate: (amount, taxRepository) => {
-    return taxRepository.get(amount)
+  taxRate: async (amount, taxRepository) => {
+    const rate = await taxRepository.get(amount)
+    return rate;
   }
 }
 

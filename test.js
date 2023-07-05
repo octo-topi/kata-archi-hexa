@@ -8,7 +8,7 @@ chai.use(sinonChai);
 const expect = chai.expect;
 import {taxRate} from './application/tax-calculator.js'
 import {forGettingTaxes} from "./application/driving-ports/for-getting-taxes.js";
-import {taxRepository} from './application/driven-ports/tax-repository.js'
+import {memoryTaxRepository} from './application/driven-ports/memory-tax-repository.js'
 
 // taxRate(amount) return the tax rate to apply, eg. taxRate(100) => 0,10 (10 percent)
 // taxOn(amount) return the tax value, eg.taxRate(100) =>  10 (euros)
@@ -38,7 +38,7 @@ describe('Tests ', function () {
         const amount = 0;
 
         // when
-        const rate = forGettingTaxes.taxRate(amount, taxRepository);
+        const rate = forGettingTaxes.taxRate(amount, memoryTaxRepository);
 
         // then
         expect(rate).to.equal(0);
